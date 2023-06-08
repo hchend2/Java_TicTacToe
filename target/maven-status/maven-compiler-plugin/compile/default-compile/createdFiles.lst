@@ -1,2 +1,6 @@
+Client.class
+firstPage.class
+Client$ClientThread.class
 JavaTicTacToe.class
+ServerTicTacToe.class
 TicTacToeLogic.class

@@ -1,22 +1,20 @@
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -56,7 +54,7 @@ public class JavaTicTacToe extends Application {
     private  Button button2;
     private  Button button3;
     private  Button button4;
-    final Label label = new Label();
+//    final Label label = new Label();
     
     
     private TextField ip_input, port_input, result;
@@ -67,23 +65,19 @@ public class JavaTicTacToe extends Application {
     private ListView<Serializable> scores = new ListView<>();
     private ListView<Serializable> progress = new ListView<>();
 
-
 //    TicTacToeLogic check;
 //    String ls = check.isGridFull(); // just a test ...
-
 
     public void buttonXHandler(Button btn) {
         btn.setOnAction(event -> {
             btn.setText("X");
         });
     }
-
     public void buttonOHandler(Button btn) {
         btn.setOnAction(event -> {
             btn.setText("O");
         });
     }
-
     public GridPane myGrid() {
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER_LEFT);
@@ -109,11 +103,11 @@ public class JavaTicTacToe extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // TODO Auto-generated method stub
-        primaryStage.setTitle("Tic Tac Toe");
+//        primaryStage.setTitle("Tic Tac Toe");
 
         primaryStage.setTitle("Tic Tac Toe Game");
 
-        SceneMap.put("ClientScene1", clientGUI1();
+        SceneMap.put("ClientScene1", clientGUI1());
         SceneMap.put("ClientScene2", ClientGUI2());
         SceneMap.put("ClientScene3", ClientGUI3());
 
@@ -236,7 +230,6 @@ public class JavaTicTacToe extends Application {
 
             primaryStage.setScene(SceneMap.get("ClientScene3"));
         });
-
         primaryStage.setScene(SceneMap.get("ClientScene1"));
         primaryStage.show();
     }
@@ -334,7 +327,6 @@ public class JavaTicTacToe extends Application {
 
         return new Scene(borderPane, 700, 500);
     }
-
     private  GridPane createGridPane() {
         Rectangle TopLeft = createRectangle(0);
         Rectangle TopCenter = createRectangle(1);
