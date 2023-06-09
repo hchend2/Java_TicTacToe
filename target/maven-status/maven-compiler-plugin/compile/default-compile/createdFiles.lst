@@ -1,6 +1,10 @@
 Client.class
-firstPage.class
+GameInfo.class
+Server$ClientThread.class
+Server$_server.class
 Client$ClientThread.class
 JavaTicTacToe.class
-ServerTicTacToe.class
+Server.class
+Game.class
 TicTacToeLogic.class
+ServerTicTacToeGUI.class
